@@ -2,6 +2,7 @@ import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
 import { Button } from '../ui/Button'
 import { Reveal } from '../motion/Reveal'
+import { getAssetUrl } from '../../lib/assets'
 import { trackEvent } from '../../lib/analytics'
 
 export function About() {
@@ -15,7 +16,7 @@ export function About() {
               <div className="relative">
                 <div className="aspect-[4/5] overflow-hidden rounded-xs bg-stone/20 border border-stone/50 shadow-xs">
                   <img
-                    src="/images/about-detail.jpg"
+                    src={getAssetUrl('images/about-detail.jpg')}
                     alt="Close detail of handcrafted interior finishes, natural wood cabinetry and textured plaster"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
                     loading="lazy"

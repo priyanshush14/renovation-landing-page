@@ -1,4 +1,5 @@
 import type { ServiceItem } from '../types'
+import { getAssetUrl } from '../lib/assets'
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
@@ -15,7 +16,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     fictionalBudget: '$18,000–$45,000',
     fictionalDuration: '3–7 weeks',
-    image: '/images/service-kitchen.jpg',
+    image: getAssetUrl('images/service-kitchen.jpg'),
     imageAlt: 'Bespoke modern kitchen with warm white oak cabinets, honed stone counters, and recessed lighting',
   },
   {
@@ -32,7 +33,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     fictionalBudget: '$8,000–$25,000',
     fictionalDuration: '2–5 weeks',
-    image: '/images/service-bathroom.jpg',
+    image: getAssetUrl('images/service-bathroom.jpg'),
     imageAlt: 'Minimalist bathroom renovation with travertine tile, warm lighting, and brushed bronze fixtures',
   },
   {
@@ -49,7 +50,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     fictionalBudget: '$60,000–$150,000+',
     fictionalDuration: '2–6 months',
-    image: '/images/service-whole-home.jpg',
+    image: getAssetUrl('images/service-whole-home.jpg'),
     imageAlt: 'Open concept whole-home renovation with vaulted wood ceilings, wide plank floors, and natural light',
   },
   {
@@ -66,7 +67,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     fictionalBudget: '$5,000–$20,000',
     fictionalDuration: 'Scope-dependent',
-    image: '/images/service-flooring.jpg',
+    image: getAssetUrl('images/service-flooring.jpg'),
     imageAlt: 'Sunlit wide plank European white oak flooring with clean architectural baseboards',
   },
   {
@@ -83,7 +84,7 @@ export const SERVICES_DATA: ServiceItem[] = [
     ],
     fictionalBudget: '$12,000–$40,000',
     fictionalDuration: 'Scope-dependent',
-    image: '/images/service-interior.jpg',
+    image: getAssetUrl('images/service-interior.jpg'),
     imageAlt: 'Modern living space transformation with integrated architectural fireplace and plaster alcove shelving',
   },
 ]

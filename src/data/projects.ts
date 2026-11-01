@@ -1,4 +1,5 @@
 import type { ProjectConcept } from '../types'
+import { getAssetUrl } from '../lib/assets'
 
 export const PROJECTS_DATA: ProjectConcept[] = [
   {
@@ -15,8 +16,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       'Integrated panel-ready refrigeration & hidden pantry',
       'Acoustic plaster ceiling with directional spotlights',
     ],
-    mainImage: '/images/project-warm-kitchen-main.jpg',
-    detailImage: '/images/project-warm-kitchen-detail.jpg',
+    mainImage: getAssetUrl('images/project-warm-kitchen-main.jpg'),
+    detailImage: getAssetUrl('images/project-warm-kitchen-detail.jpg'),
     alt: 'Concept presentation of a warm modern kitchen renovation with oak island and stone counters',
   },
   {
@@ -33,8 +34,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       'Solid oak floating dual vanity with vessel basins',
       'Thermostatic rainfall system and concealed niche',
     ],
-    mainImage: '/images/project-quiet-bath-main.jpg',
-    detailImage: '/images/project-quiet-bath-detail.jpg',
+    mainImage: getAssetUrl('images/project-quiet-bath-main.jpg'),
+    detailImage: getAssetUrl('images/project-quiet-bath-detail.jpg'),
     alt: 'Concept presentation of a quiet luxury primary bathroom with travertine walls and soaking tub',
   },
   {
@@ -51,8 +52,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       'Continuous wide-plank European oak flooring',
       'Low-iron multi-slide glazed door systems',
     ],
-    mainImage: '/images/project-connected-living-main.jpg',
-    detailImage: '/images/project-connected-living-detail.jpg',
+    mainImage: getAssetUrl('images/project-connected-living-main.jpg'),
+    detailImage: getAssetUrl('images/project-connected-living-detail.jpg'),
     alt: 'Concept presentation of an expansive whole-home renovation connecting open living and dining',
   },
 ]

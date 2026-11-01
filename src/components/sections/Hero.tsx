@@ -2,6 +2,7 @@ import { Container } from '../ui/Container'
 import { Eyebrow } from '../ui/Eyebrow'
 import { Button } from '../ui/Button'
 import { Reveal } from '../motion/Reveal'
+import { getAssetUrl } from '../../lib/assets'
 import { trackEvent } from '../../lib/analytics'
 
 export function Hero() {
@@ -85,7 +86,7 @@ export function Hero() {
                 
                 <div className="relative aspect-[4/5] sm:aspect-[4/4.8] lg:aspect-[4/5.2] overflow-hidden rounded-xs bg-stone/20 shadow-sm border border-stone/40">
                   <img
-                    src="/images/hero-architectural.jpg"
+                    src={getAssetUrl('images/hero-architectural.jpg')}
                     alt="Warm modern residential kitchen featuring natural oak cabinetry, limestone countertops, and gentle daylight"
                     className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
                     fetchPriority="high"

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #292824;
+  --color-ivory: #F5F1E9;
+  --color-paper: #FBF9F5;
+  --color-olive: #85866D;
+  --color-olive-dark: #62644F;
+  --color-stone: #D8CCBA;
+  --color-taupe: #B7A894;
+  --color-muted: #77746C;
+  --color-white: #FFFFFF;
+  --color-error: #A34336;
+  --color-success: #526B50;
+
+  --font-serif: "DM Serif Display", Georgia, serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+:root {
+  --color-ink: #292824;
+  --color-ivory: #F5F1E9;
+  --color-paper: #FBF9F5;
+  --color-olive: #85866D;
+  --color-olive-dark: #62644F;
+  --color-stone: #D8CCBA;
+  --color-taupe: #B7A894;
+  --color-muted: #77746C;
+  --color-white: #FFFFFF;
+  --color-error: #A34336;
+  --color-success: #526B50;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: var(--color-ivory);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

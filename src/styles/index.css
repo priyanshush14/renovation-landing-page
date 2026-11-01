@@ -1,0 +1,25 @@
+@import "./tokens.css";
+
+/* Custom utility styles */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* Subtle architectural divider line */
+.divider-stone {
+  border-color: var(--color-stone);
+}
+
+/* Custom focus ring for accessibility */
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-olive-dark);
+  outline-offset: 3px;
+}

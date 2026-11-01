@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="8" fill="#292824"/>
+  <!-- Elegant architectural arch / hearth monogram -->
+  <path d="M14 36V14C14 14 18 12 24 12C30 12 34 14 34 14V36" stroke="#F5F1E9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M14 26H34" stroke="#85866D" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="24" cy="21" r="2.5" fill="#D8CCBA"/>
+</svg>

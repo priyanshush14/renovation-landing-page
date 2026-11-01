@@ -1,0 +1,6 @@
+# Hearth & Haven Renovations LLC - Robots Configuration
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hearthandhaven.example/sitemap.xml

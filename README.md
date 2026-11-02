@@ -92,3 +92,7 @@ npm run deploy
 ## License
 
 © 2026 Hearth & Haven Renovations LLC. All rights reserved.
+
+## Disclaimer
+
+**Hearth & Haven Renovations** is a fictional brand created as a portfolio and demonstration project. The business, projects, locations, testimonials, and associated content are presented for design and development purposes only and do not represent a real operating company or verified client work.

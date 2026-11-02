@@ -1,108 +1,186 @@
+import { useState, useRef, useEffect } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Container } from '../ui/Container'
-import { Eyebrow } from '../ui/Eyebrow'
 import { Button } from '../ui/Button'
-import { Reveal } from '../motion/Reveal'
 import { getAssetUrl } from '../../lib/assets'
 import { trackEvent } from '../../lib/analytics'
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const shouldReduceMotion = useReducedMotion()
+  const [videoLoaded, setVideoLoaded] = useState(false)
+  const [hasError, setHasError] = useState(false)
+
+  const videoSrc = getAssetUrl('videos/hearth-haven-hero.mp4')
+  const posterSrc = getAssetUrl('images/hero-architectural.jpg')
+
+  // Safely initiate continuous looped video playback
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video || shouldReduceMotion) return
+
+    const playPromise = video.play()
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay policy prevented playback; poster remains visible
+      })
+    }
+  }, [shouldReduceMotion])
+
+  // Animation variants adhering to the 550-800ms architectural motion spec
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.15,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 16 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: [0.22, 1, 0.36, 1] as const,
+      },
+    },
+  }
+
   return (
     <section
       id="top"
-      className="relative pt-32 sm:pt-40 lg:pt-44 pb-16 sm:pb-20 lg:pb-28 overflow-hidden bg-ivory"
+      aria-label="Hero Section"
+      className="relative min-h-[75svh] sm:min-h-[85svh] lg:min-h-[92svh] xl:min-h-[96svh] flex items-center justify-center overflow-hidden bg-ink"
     >
-      <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Editorial Typography */}
-          <div className="lg:col-span-7 flex flex-col items-start z-10">
-            <Reveal delay={0.05} yOffset={12}>
-              <div className="flex items-center gap-2 mb-4 sm:mb-5">
-                <span className="w-6 h-[1.5px] bg-olive inline-block" />
-                <Eyebrow>Austin, Texas · Residential Renovation</Eyebrow>
-              </div>
-            </Reveal>
+      {/* Background Video / Architectural Fallback Layer */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {/* Subtle initial scale settle: 1.04 to 1.0 */}
+        <motion.div
+          initial={shouldReduceMotion ? { scale: 1 } : { scale: 1.04 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] as const }}
+          className="w-full h-full relative"
+        >
+          {/* Fallback poster image underneath */}
+          <img
+            src={posterSrc}
+            alt="Warm modern residential architecture at twilight"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            fetchPriority="high"
+            loading="eager"
+            width={1920}
+            height={1080}
+          />
 
-            <Reveal delay={0.12} yOffset={16}>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-[4.25rem] text-ink leading-[1.05] tracking-tight text-balance">
-                A better home begins with a better renovation experience.
-              </h1>
-            </Reveal>
+          {!shouldReduceMotion && !hasError && (
+            <video
+              ref={videoRef}
+              src={videoSrc}
+              poster={posterSrc}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-hidden="true"
+              onLoadedData={() => setVideoLoaded(true)}
+              onError={() => setHasError(true)}
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ${
+                videoLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          )}
 
-            <Reveal delay={0.2} yOffset={16}>
-              <p className="mt-5 sm:mt-6 font-sans text-base sm:text-lg md:text-xl text-muted font-light leading-relaxed max-w-xl text-pretty">
-                Thoughtful design. Skilled craftsmanship. A renovation process built
-                around your home and your priorities.
-              </p>
-            </Reveal>
+          {/* Restrained Architectural Overlay to guarantee text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-ink/90 via-ink/65 to-ink/40" />
+          <div className="absolute inset-0 bg-ink/25" />
+        </motion.div>
+      </div>
 
-            <Reveal delay={0.28} yOffset={14}>
-              <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
-                <Button
-                  href="#contact"
-                  variant="primary"
-                  size="lg"
-                  showArrow
-                  onClick={() =>
-                    trackEvent('primary_cta_click', { location: 'hero_primary' })
-                  }
-                >
-                  Request a Free Consultation
-                </Button>
+      {/* Hero Foreground Content */}
+      <Container className="relative z-10 pt-28 sm:pt-36 lg:pt-40 pb-20 sm:pb-24 lg:pb-28">
+        <div className="max-w-3xl">
+          <motion.div
+            variants={shouldReduceMotion ? undefined : containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-start"
+          >
+            {/* Eyebrow */}
+            <motion.div variants={itemVariants} className="flex items-center gap-2 mb-4 sm:mb-5">
+              <span className="w-6 h-[1.5px] bg-stone/80 inline-block" />
+              <span className="font-sans text-[11px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-stone">
+                Thoughtful Residential Renovation · Austin, TX
+              </span>
+            </motion.div>
 
-                <Button
-                  href="#projects"
-                  variant="secondary"
-                  size="lg"
-                  onClick={() =>
-                    trackEvent('secondary_cta_click', { location: 'hero_secondary' })
-                  }
-                >
-                  Explore Our Work
-                </Button>
-              </div>
-            </Reveal>
+            {/* Headline */}
+            <motion.h1
+              variants={itemVariants}
+              className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4.25rem] text-ivory leading-[1.08] tracking-tight text-balance"
+            >
+              A more considered way to live.
+            </motion.h1>
 
-            {/* Subtle location trust indicator */}
-            <Reveal delay={0.34} yOffset={10}>
-              <div className="mt-10 pt-6 border-t border-stone/50 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted font-sans">
-                <span className="flex items-center gap-1.5 font-medium text-ink">
-                  <span className="w-1.5 h-1.5 rounded-full bg-olive inline-block" />
-                  Austin &amp; Surrounding Communities
-                </span>
-                <span>•</span>
-                <span>Kitchens, Bathrooms &amp; Whole-Home</span>
-                <span>•</span>
-                <span>Dedicated Project Management</span>
-              </div>
-            </Reveal>
-          </div>
+            {/* Supporting Statement */}
+            <motion.p
+              variants={itemVariants}
+              className="mt-5 sm:mt-6 font-sans text-base sm:text-lg md:text-xl text-stone/90 font-light leading-relaxed max-w-2xl text-pretty"
+            >
+              Thoughtful design, skilled craftsmanship and a renovation experience
+              shaped around your home and your priorities.
+            </motion.p>
 
-          {/* Right Column: Architectural Photography */}
-          <div className="lg:col-span-5 relative">
-            <Reveal delay={0.18} duration={0.85} yOffset={20}>
-              <div className="relative mx-auto max-w-lg lg:max-w-none">
-                {/* Architectural frame with soft paper backdrop */}
-                <div className="absolute -inset-2.5 sm:-inset-4 bg-stone/30 rounded-xs -rotate-1 hidden sm:block" />
-                
-                <div className="relative aspect-[4/5] sm:aspect-[4/4.8] lg:aspect-[4/5.2] overflow-hidden rounded-xs bg-stone/20 shadow-sm border border-stone/40">
-                  <img
-                    src={getAssetUrl('images/hero-architectural.jpg')}
-                    alt="Warm modern residential kitchen featuring natural oak cabinetry, limestone countertops, and gentle daylight"
-                    className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.02]"
-                    fetchPriority="high"
-                    loading="eager"
-                    width={800}
-                    height={1040}
-                  />
-                  
-                  {/* Subtle editorial photo caption badge */}
-                  <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-ink/85 backdrop-blur-sm px-3 py-1.5 text-ivory rounded-xs text-[10px] tracking-wider uppercase font-sans font-light">
-                    Illustrative Concept
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+            {/* Conversion CTA Group */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto"
+            >
+              <Button
+                href="#contact"
+                variant="primary"
+                size="lg"
+                showArrow
+                onClick={() =>
+                  trackEvent('primary_cta_click', { location: 'hero_video_primary' })
+                }
+              >
+                Request a Consultation
+              </Button>
+
+              <Button
+                href="#projects"
+                variant="secondary"
+                size="lg"
+                onClick={() =>
+                  trackEvent('secondary_cta_click', { location: 'hero_video_secondary' })
+                }
+                className="bg-ivory/10 hover:bg-ivory/20 text-ivory border-stone/30 backdrop-blur-xs"
+              >
+                Explore Our Work
+              </Button>
+            </motion.div>
+
+            {/* Subtle editorial trust footnote */}
+            <motion.div
+              variants={itemVariants}
+              className="mt-10 pt-6 border-t border-stone/25 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-stone/80 font-sans"
+            >
+              <span className="flex items-center gap-1.5 font-medium text-stone">
+                <span className="w-1.5 h-1.5 rounded-full bg-olive inline-block" />
+                Greater Austin &amp; Hill Country
+              </span>
+              <span>•</span>
+              <span>Kitchens, Bathrooms &amp; Whole-Home</span>
+              <span>•</span>
+              <span>Dedicated Project Management</span>
+            </motion.div>
+          </motion.div>
         </div>
       </Container>
     </section>

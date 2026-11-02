@@ -52,17 +52,67 @@ export interface ServiceItem {
   imageAlt: string
 }
 
+export interface GalleryItem {
+  url: string
+  alt: string
+  caption: string
+  aspectRatio?: '4/3' | '16/9' | '3/4' | '1/1'
+}
+
+export interface DesignDirection {
+  intent: string
+  paletteAndMaterials: string
+  surfacesAndFixtures: string
+  lightingApproach: string
+  storageAndLayout: string
+}
+
 export interface ProjectConcept {
   id: string
+  slug: string
   title: string
   category: string
+  filterCategory: 'kitchens' | 'bathrooms' | 'whole-home' | 'interior'
+  locationLabel: string
   conceptTag: string
   tagline: string
+  summary: string
   narrative: string
+  clientBrief?: {
+    goals: string
+    constraints: string
+  }
+  designDirection: DesignDirection
+  architecturalElements: string[]
   scope: string[]
+  thinkingBehindDesign: string
+  relatedServices: {
+    title: string
+    href: string
+  }[]
+  gallery: GalleryItem[]
   mainImage: string
   detailImage: string
   alt: string
+  isIllustrative: boolean
+}
+
+export interface TestimonialItem {
+  id: string
+  reviewerName: string
+  location: string
+  projectType: string
+  rating: number
+  headline?: string
+  quote: string
+  reviewDate: string
+  isVerifiedGoogleReview: boolean
+  reviewerInitials?: string
+}
+
+export interface SocialLinksConfig {
+  instagram?: string
+  youtube?: string
 }
 
 export interface ProcessStage {

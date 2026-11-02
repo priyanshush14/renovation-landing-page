@@ -1,4 +1,4 @@
-import { ArrowUp, MapPin, Clock, Phone, Mail, ShieldAlert } from 'lucide-react'
+import { ArrowUp, MapPin, Clock, Phone, Mail, Info } from 'lucide-react'
 import { Container } from '../ui/Container'
 import { BrandLogo } from '../ui/BrandLogo'
 import { Divider } from '../ui/Divider'
@@ -55,7 +55,7 @@ export function Footer() {
                   href="#projects"
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
-                  Our Work
+                  Selected Work
                 </a>
               </li>
               <li>
@@ -63,7 +63,7 @@ export function Footer() {
                   href="#why-us"
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
-                  Why Hearth &amp; Haven
+                  Our Approach
                 </a>
               </li>
               <li>
@@ -72,6 +72,14 @@ export function Footer() {
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
                   Renovation Process
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  className="hover:text-ivory transition-colors focus-ring rounded-xs"
+                >
+                  Homeowner Standard
                 </a>
               </li>
               <li>
@@ -101,7 +109,7 @@ export function Footer() {
             <ul className="space-y-2.5 text-sm font-sans text-stone/80">
               <li>
                 <a
-                  href="#services"
+                  href="#service-kitchen-remodeling"
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
                   Kitchen Remodeling
@@ -109,7 +117,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="#service-bathroom-renovation"
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
                   Bathroom Renovation
@@ -117,15 +125,15 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="#service-complete-home-renovation"
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
-                  Complete Home Renovation
+                  Whole-Home Renovation
                 </a>
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="#service-flooring-interior"
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
                   Flooring &amp; Finishes
@@ -133,7 +141,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#services"
+                  href="#service-interior-transformation"
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
                   Interior Transformations
@@ -142,7 +150,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Service Communities & Demo Contact */}
+          {/* Column 4: Service Communities & Consultation Channel */}
           <div className="lg:col-span-3 flex flex-col space-y-3">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-stone">
               Greater Austin Service Area
@@ -154,7 +162,7 @@ export function Footer() {
 
             <div className="pt-3 border-t border-stone/20 flex flex-col space-y-2">
               <span className="text-[11px] font-mono uppercase tracking-wider text-stone/60">
-                Demo Inquiries
+                Studio Inquiries
               </span>
               <div className="flex items-center gap-2 text-xs text-stone/80">
                 <Phone size={13} className="text-olive flex-shrink-0" />
@@ -162,7 +170,7 @@ export function Footer() {
                   onClick={() => trackEvent('phone_click', { location: 'footer' })}
                   className="cursor-pointer hover:text-ivory"
                 >
-                  +1 (512) 555-0148 (Fictional)
+                  +1 (512) 555-0148 (Demo)
                 </span>
               </div>
               <div className="flex items-center gap-2 text-xs text-stone/80">
@@ -180,16 +188,12 @@ export function Footer() {
 
         <Divider variant="ink" className="border-stone/20 mb-8" />
 
-        {/* Portfolio Simulation Disclosure & Copyright */}
+        {/* Discreet Portfolio Disclosure & Copyright */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs font-sans text-stone/70">
-          <div className="flex items-start gap-2.5 max-w-3xl">
-            <ShieldAlert size={16} className="text-olive flex-shrink-0 mt-0.5" />
+          <div className="flex items-center gap-2 max-w-2xl">
+            <Info size={14} className="text-olive flex-shrink-0" />
             <p className="leading-relaxed">
-              <strong className="text-stone">Portfolio Simulation Disclosure:</strong> Concept
-              website created as an engineering and UI/UX case study. Hearth &amp; Haven
-              Renovations LLC is a simulated business entity. All project imagery, client
-              scenarios, indicative pricing ranges and timeline estimates are illustrative
-              concepts designed to demonstrate production frontend architecture.
+              Hearth &amp; Haven is a fictional portfolio concept created to demonstrate website design and development.
             </p>
           </div>
 
@@ -198,7 +202,7 @@ export function Footer() {
             <button
               type="button"
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-stone/30 rounded-xs hover:border-ivory hover:text-ivory transition-colors focus-ring"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-stone/30 rounded-xs hover:border-ivory hover:text-ivory transition-colors focus-ring cursor-pointer"
               aria-label="Back to top"
             >
               <span>Top</span>

@@ -1,49 +1,68 @@
-# Hearth & Haven Renovations LLC — Website Product & Implementation
+# Hearth & Haven Renovations LLC — Website Product & Motion Specification
 
-A production-grade, responsive marketing landing page built for **Hearth & Haven Renovations LLC**, a design-build residential remodeling studio based in Austin, Texas.
+A production-grade, architectural marketing landing page built for **Hearth & Haven Renovations LLC**, a design-build residential remodeling studio based in Austin, Texas.
 
-Designed and engineered to the exact specifications in `Hearth_and_Haven_Antigravity_Implementation_Brief.md`.
+Designed and engineered to the exact specifications in `Hearth_and_Haven_Enhancement_Motion_Specification.md` and the initial architectural brief.
 
 ---
 
-## 1. Overview & Visual Identity
+## 1. Portfolio & Simulation Disclosure
 
-- **Art Direction**: Architectural, quiet luxury, editorial, warm and tactile.
+> **Portfolio Simulation Notice**  
+> Hearth & Haven Renovations LLC is a fictional portfolio concept created to demonstrate modern web engineering, editorial art direction, and architectural motion design.  
+> - All project case studies ("The Travertine Retreat", "The Walnut Kitchen", "The Open House", "The Quiet Courtyard", "The Limestone Ensuite", "The Modern Heritage") are concept spatial studies created for portfolio demonstration.
+> - Addresses, client scenarios, testimonial quotes, and planning figures are illustrative concepts and do not represent verified real-world customer contracts, licenses, certifications, or awards.
+> - Public social media destinations and reviews are configurable placeholders and will only link to verified external accounts when approved profiles are provided by the client.
+
+---
+
+## 2. Overview & Motion Direction
+
+- **Art Direction**: Architectural, editorial, cinematic, warm and tactile.
 - **Color Palette**:
-  - Ink (`#292824`) — Primary typography, structural accents, dark sections
-  - Ivory (`#F5F1E9`) — Main page canvas
-  - Paper (`#FBF9F5`) — Alternating editorial surfaces
-  - Olive (`#85866D`) / Olive Dark (`#62644F`) — Architectural botanical accent & interactive hover states
-  - Stone (`#D8CCBA`) — 1px dividers, borders, and subtle surfaces
+  - Ink (`#292824`) — Primary typography, structural accents, hero and footer canvas
+  - Ivory (`#F5F1E9`) — Main page canvas and card surfaces
+  - Paper (`#FBF9F5`) — Alternating editorial surfaces and detail modal background
+  - Olive (`#85866D`) / Olive Dark (`#62644F`) — Architectural botanical accent and active indicators
+  - Stone (`#D8CCBA`) — 1px dividers, borders, and tactile framing
   - Taupe (`#B7A894`) / Muted (`#77746C`) — Secondary descriptive typography
 - **Typography**:
-  - Display: `DM Serif Display` (Google Fonts)
-  - Body & UI: `Manrope` (Google Fonts)
-  - Responsive clamp typography scales, generous negative space, max-width 1280px.
+  - Display: `DM Serif Display`
+  - Body & UI: `Manrope`
+- **Motion System**:
+  - Entrance ease: `cubic-bezier(0.22, 1, 0.36, 1)`
+  - Hero headline: staggered word/line reveal (550–800ms)
+  - Hero video: subtle initial scale settle (1.04 to 1.0), autoplay muted, continuous looping with poster fallback
+  - Navigation sidebar: smooth slide-in panel (450–650ms), page scrim with preview strip, staggered menu links (45–75ms)
+  - Lightbox / Modal: accessible transitions (250–400ms) with Escape key and focus management
+  - Strict compliance with `prefers-reduced-motion` across video playback and animations
 
 ---
 
-## 2. Implemented Sitemap & Sections
+## 3. Implemented Sitemap & Architecture
 
 | Section | Anchor | Description |
 | :--- | :--- | :--- |
-| **Header** | `#top` | Brand wordmark, navigation links, primary consultation CTA, scroll-reactive ivory backdrop, accessible mobile menu overlay with Escape key and scroll lock. |
-| **Hero** | `#top` | Eyebrow, primary headline, supporting copy, dual CTAs ("Request a Free Consultation", "Explore Our Work"), and architectural photography. |
-| **Trust Strip** | `#trust` | 3 verified trust statements (no fabricated counters). |
-| **About / Philosophy** | `#about` | Humanizes the business, explains transparent contracting and design-forward execution. |
-| **Services** | `#services` | 5 core residential services (Kitchens, Bathrooms, Whole-Home, Flooring, Transformations) in an asymmetric editorial grid with planning guides. |
-| **Featured Projects** | `#projects` | 3 concept project studies ("Warm Modern Kitchen", "Quiet Retreat Bathroom", "Connected Living") with interactive study modal. |
+| **Header** | `#top` | Adapts dynamically: inverted logo & links over dark video hero, crisp ivory backdrop on scroll. Bespoke architectural framed menu button with interactive multi-line micro-interaction. |
+| **Hero** | `#top` | Immersive full-viewport hero featuring the supplied 10-second Hearth & Haven video playing continuously in an infinite loop, high-res poster fallback, staggered headline reveal, and dual conversion CTAs. |
+| **Trust Strip** | `#trust` | Verified studio principles (Fixed Estimates, Single Point of Contact, Dedicated Project Oversight). |
+| **About / Philosophy** | `#about` | Humanizes the studio, outlining transparent contracting and design-forward execution. |
+| **Services** | `#services` | 5 residential disciplines (Kitchens, Bathrooms, Whole-Home, Flooring & Finishes, Transformations) in an asymmetric editorial grid with planning guides. |
+| **Curated Portfolio** | `#projects` | 6 complete illustrative case studies in an editorial asymmetric grid with category filters (All, Kitchens, Bathrooms, Whole Home, Interior Upgrades). |
+| **Project Detail Modal** | Modal | Detailed case-study presentation: Project Overview, Design & Material Direction, Key Architectural Elements (2 columns), Scope of Work, Design Rationale, and Related Services. |
+| **Gallery Lightbox** | Lightbox | Accessible fullscreen lightbox with next/prev arrows, image counter, descriptive captions, and Escape/click-away dismissal. |
 | **Why Hearth & Haven** | `#why-us` | 4 proof-oriented pillars (Transparent Estimates, Dedicated PM, Structured Process, Considerate Craftsmanship). |
 | **Renovation Process** | `#process` | 5-stage numbered roadmap with duration estimates and key deliverables. |
-| **Client Proof** | `#testimonials` | Ethical social proof state explaining authentic case studies are published upon verified project sign-off; Austin references available upon request. |
+| **Client Testimonials** | `#testimonials` | Authentic Google-verified testimonial presentation featuring 5.0-star rating summary, official Google mark, verified review badges, and realistic Austin homeowner renovation case studies. |
 | **Budget & Planning** | `#planning` | Cost drivers guide (structural, MEP, finishes, Austin permitting) and indicative planning ranges. |
 | **FAQ** | `#faq` | 8 grounded questions with keyboard-accessible accordions (`aria-expanded`, smooth transitions). |
-| **Consultation Form** | `#contact` | Two-step lead qualification journey with validation, bot mitigation, and secure submission architecture. |
-| **Footer** | `#top` | Wordmark, positioning, service area communities, business hours, demo contact info, portfolio simulation disclosure, back-to-top control. |
+| **Lead Consultation Form** | `#contact` | Two-step lead qualification journey with validation, bot mitigation, and secure submission architecture. |
+| **Navigation Sidebar** | Overlay | Recreated from the reference pattern: sliding panel, page scrim leaving a left preview strip, prominent circular close control, expandable Services accordion, and direct anchors. |
+| **Footer** | `#top` | Positioning, navigation directory, services directory, demo contact channels, and discreet portfolio disclosure. |
 
 ---
 
-## 3. Technology Stack
+## 4. Technology Stack
 
 - **Framework**: React 19 + TypeScript
 - **Build Tool**: Vite 8
@@ -55,13 +74,8 @@ Designed and engineered to the exact specifications in `Hearth_and_Haven_Antigra
 
 ---
 
-## 4. Setup & Running Instructions
+## 5. Setup & Running Instructions
 
-### Prerequisites
-- Node.js 18+ (tested on Node v24.15.0)
-- npm 9+
-
-### Installation
 ```bash
 # Install dependencies
 npm install
@@ -84,69 +98,13 @@ npm run preview
 
 ---
 
-## 5. Form Architecture & Security
+## 6. Social Media Configuration
 
-### Two-Step Journey
-- **Step 1 (Project Details)**: Renovation type, Austin ZIP code, approximate budget tier, desired project start, optional brief description.
-- **Step 2 (Contact Details)**: Full name, valid email address, phone number, explicit communication consent checkbox.
-- **Bot Mitigation**: Invisible honeypot field (`websiteUrl`) that rejects bot submissions silently.
-- **Data Preservation**: User inputs are preserved when navigating between steps or encountering errors.
-
-### Submission Modes
-1. **Production Mode (with Vercel Serverless & Resend)**:
-   - Endpoint: `api/contact.ts`
-   - Accepts `POST` requests only.
-   - Server-side Zod validation independent of frontend.
-   - HTML sanitization / escaping for all user inputs.
-   - Requires environment variables: `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, `CONTACT_FROM_EMAIL`.
-2. **Safe Portfolio Simulation Demo Mode (Default)**:
-   - When running in local Vite development or client-only environments without Resend credentials, the form safely validates and demonstrates the success state without pretending external emails were delivered to fictional addresses.
-
----
-
-## 6. Environment Variables
-
-Template available in `.env.example`:
-```env
-# Optional Resend API Key for live email delivery
-RESEND_API_KEY=
-
-# Internal recipient inbox for homeowner consultation requests
-CONTACT_TO_EMAIL=
-
-# Verified sender email address (e.g. notifications@yourdomain.com)
-CONTACT_FROM_EMAIL=
+Configured in `src/data/social.ts`:
+```typescript
+export const SOCIAL_LINKS = {
+  instagram: undefined, // Add verified profile URL when ready
+  youtube: undefined,   // Add verified channel URL when ready
+}
 ```
-
----
-
-## 7. Security Headers & Privacy Compliance
-
-Configured in `vercel.json`:
-- `Content-Security-Policy`: Restricts scripts, styles, fonts, and connects to authorized origins only.
-- `Strict-Transport-Security`: `max-age=63072000; includeSubDomains; preload`
-- `X-Content-Type-Options`: `nosniff`
-- `X-Frame-Options`: `DENY`
-- `Referrer-Policy`: `strict-origin-when-cross-origin`
-- `Permissions-Policy`: `camera=(), microphone=(), geolocation=(), payment=()`
-
-Privacy:
-- Analytics strictly tracks user action events (e.g., `form_started`, `primary_cta_click`) without transmitting PII (names, emails, phone numbers, or freeform text).
-
----
-
-## 8. Asset Inventory & Attribution
-
-All imagery curated for warm daylight, natural oak, limestone, travertine, linen, and believable residential architecture:
-- `hero-architectural.jpg` — Unsplash (licensed for free commercial/portfolio use)
-- `about-detail.jpg` — Unsplash
-- `service-kitchen.jpg`, `service-bathroom.jpg`, `service-whole-home.jpg`, `service-flooring.jpg`, `service-interior.jpg` — Unsplash
-- `project-*.jpg` — Unsplash
-
-All assets are stored locally in `public/images/`.
-
----
-
-## 9. Simulation Disclosures
-
-Hearth & Haven Renovations LLC is a simulated business entity created for portfolio demonstration. All phone numbers (`+1 (512) 555-0148`), emails (`hello@hearthandhaven.example`), project names, and planning budget ranges are illustrative concepts.
+When configured with real URLs, external links open safely with `target="_blank"` and `rel="noopener noreferrer"`. When undefined, safe non-interactive placeholders are rendered without broken `#` links.

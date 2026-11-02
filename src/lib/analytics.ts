@@ -15,6 +15,9 @@ export type AnalyticsEventType =
   | 'form_submission_failed'
   | 'project_gallery_opened'
   | 'service_anchor_clicked'
+  | 'sidebar_nav_click'
+  | 'portfolio_card_clicked'
+  | 'portfolio_filter_changed'
 
 interface EventPayload {
   location?: string
@@ -22,6 +25,10 @@ interface EventPayload {
   step?: number
   service?: string
   projectId?: string
+  label?: string
+  filter?: string
+  slug?: string
+  imageIndex?: number
 }
 
 export function trackEvent(name: AnalyticsEventType, payload?: EventPayload): void {

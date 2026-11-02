@@ -46,8 +46,8 @@ export interface ServiceItem {
   subtitle: string
   description: string
   features: string[]
-  fictionalBudget: string
-  fictionalDuration: string
+  indicativeBudget: string
+  indicativeDuration: string
   image: string
   imageAlt: string
 }
@@ -94,7 +94,6 @@ export interface ProjectConcept {
   mainImage: string
   detailImage: string
   alt: string
-  isIllustrative: boolean
 }
 
 export interface TestimonialItem {

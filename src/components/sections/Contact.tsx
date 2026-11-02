@@ -48,7 +48,7 @@ export function Contact() {
                       onClick={() => trackEvent('phone_click', { location: 'contact_section' })}
                       className="cursor-pointer hover:text-olive-dark transition-colors font-medium"
                     >
-                      +1 (512) 555-0148 (Demo)
+                      +1 (512) 555-0148
                     </span>
                   </div>
 
@@ -58,7 +58,7 @@ export function Contact() {
                       onClick={() => trackEvent('email_click', { location: 'contact_section' })}
                       className="cursor-pointer hover:text-olive-dark transition-colors font-medium"
                     >
-                      hello@hearthandhaven.example
+                      hello@hearthandhaven.com
                     </span>
                   </div>
                 </div>

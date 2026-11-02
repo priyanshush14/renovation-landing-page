@@ -49,14 +49,14 @@ export function Projects() {
                 id="portfolio-heading"
                 eyebrow="Curated Portfolio"
                 title="Considered spaces. Thoughtfully transformed."
-                description="Explore our residential portfolio across Greater Austin. Each study balances architectural balance, natural material integrity, and unhurried craftsmanship."
+                description="Explore our residential portfolio across Greater Austin. Each project balances architectural balance, natural material integrity, and unhurried craftsmanship."
               />
             </div>
 
             <div className="hidden lg:flex flex-col items-end text-right">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-stone/20 border border-stone/40 text-[11px] font-sans uppercase tracking-wider text-muted rounded-xs">
                 <Sparkles size={12} className="text-olive" />
-                <span>6 Curated Case Studies</span>
+                <span>Featured Residential Work</span>
               </span>
             </div>
           </div>

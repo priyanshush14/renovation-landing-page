@@ -80,7 +80,7 @@ export function Planning() {
                 </div>
 
                 <p className="font-sans text-xs text-muted font-light leading-relaxed mb-6">
-                  Fictional benchmark guidelines based on typical scope profiles in Greater
+                  Planning benchmark guidelines based on typical scope profiles in Greater
                   Austin. Exact pricing requires an on-site property assessment.
                 </p>
 

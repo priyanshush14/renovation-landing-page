@@ -1,4 +1,4 @@
-import { ArrowUp, MapPin, Clock, Phone, Mail, Info } from 'lucide-react'
+import { ArrowUp, MapPin, Clock, Phone, Mail } from 'lucide-react'
 import { Container } from '../ui/Container'
 import { BrandLogo } from '../ui/BrandLogo'
 import { Divider } from '../ui/Divider'
@@ -79,7 +79,7 @@ export function Footer() {
                   href="#testimonials"
                   className="hover:text-ivory transition-colors focus-ring rounded-xs"
                 >
-                  Homeowner Standard
+                  Client Reviews
                 </a>
               </li>
               <li>
@@ -150,7 +150,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Service Communities & Consultation Channel */}
+          {/* Column 4: Service Communities & Studio Inquiries */}
           <div className="lg:col-span-3 flex flex-col space-y-3">
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.16em] text-stone">
               Greater Austin Service Area
@@ -170,7 +170,7 @@ export function Footer() {
                   onClick={() => trackEvent('phone_click', { location: 'footer' })}
                   className="cursor-pointer hover:text-ivory"
                 >
-                  +1 (512) 555-0148 (Demo)
+                  +1 (512) 555-0148
                 </span>
               </div>
               <div className="flex items-center gap-2 text-xs text-stone/80">
@@ -179,7 +179,7 @@ export function Footer() {
                   onClick={() => trackEvent('email_click', { location: 'footer' })}
                   className="cursor-pointer hover:text-ivory"
                 >
-                  hello@hearthandhaven.example
+                  hello@hearthandhaven.com
                 </span>
               </div>
             </div>
@@ -188,17 +188,16 @@ export function Footer() {
 
         <Divider variant="ink" className="border-stone/20 mb-8" />
 
-        {/* Discreet Portfolio Disclosure & Copyright */}
+        {/* Footer Tagline & Copyright */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-xs font-sans text-stone/70">
           <div className="flex items-center gap-2 max-w-2xl">
-            <Info size={14} className="text-olive flex-shrink-0" />
             <p className="leading-relaxed">
-              Hearth &amp; Haven is a fictional portfolio concept created to demonstrate website design and development.
+              Architectural residential renovation, bespoke kitchen design, and interior transformations across Greater Austin, Texas.
             </p>
           </div>
 
           <div className="flex items-center gap-4 flex-shrink-0">
-            <span>&copy; {CURRENT_YEAR} Hearth &amp; Haven Renovations LLC</span>
+            <span>&copy; {CURRENT_YEAR} Hearth &amp; Haven Renovations LLC. All rights reserved.</span>
             <button
               type="button"
               onClick={scrollToTop}

@@ -85,14 +85,14 @@ export function Services() {
                       ))}
                     </ul>
 
-                    {/* Fictional planning guide & consultation CTA */}
+                    {/* Scope & planning guide */}
                     <div className="mt-6 pt-5 border-t border-stone/30 w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                       <div className="text-xs font-sans text-muted">
                         <span className="block font-medium text-ink">
                           Planning Scope Guide:
                         </span>
                         <span>
-                          {service.fictionalBudget} · {service.fictionalDuration} (Indicative)
+                          {service.indicativeBudget} · {service.indicativeDuration} (Typical Scope)
                         </span>
                       </div>
 

@@ -29,7 +29,7 @@ export const FAQ_DATA: FAQItemData[] = [
     id: 'timeline-duration',
     question: 'How long does a typical renovation project take?',
     answer:
-      'Timelines depend on scope and permit requirements. Fictional planning benchmarks include 3–7 weeks for kitchen remodeling, 2–5 weeks for bathroom renovations, and 2–6 months for complete home renovations. We establish a milestone schedule prior to starting construction and update you continuously.',
+      'Timelines depend on scope and permit requirements. Typical planning benchmarks include 3–7 weeks for kitchen remodeling, 2–5 weeks for bathroom renovations, and 2–6 months for complete home renovations. We establish a milestone schedule prior to starting construction and update you continuously.',
   },
   {
     id: 'living-during-renovation',

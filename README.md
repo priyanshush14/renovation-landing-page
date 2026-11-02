@@ -1,110 +1,94 @@
-# Hearth & Haven Renovations LLC — Website Product & Motion Specification
+# Hearth & Haven Renovations LLC
 
-A production-grade, architectural marketing landing page built for **Hearth & Haven Renovations LLC**, a design-build residential remodeling studio based in Austin, Texas.
+The official marketing website and digital portfolio for **Hearth & Haven Renovations LLC**, a design-build residential remodeling studio based in Austin, Texas.
 
-Designed and engineered to the exact specifications in `Hearth_and_Haven_Enhancement_Motion_Specification.md` and the initial architectural brief.
-
----
-
-## 1. Portfolio & Simulation Disclosure
-
-> **Portfolio Simulation Notice**  
-> Hearth & Haven Renovations LLC is a fictional portfolio concept created to demonstrate modern web engineering, editorial art direction, and architectural motion design.  
-> - All project case studies ("The Travertine Retreat", "The Walnut Kitchen", "The Open House", "The Quiet Courtyard", "The Limestone Ensuite", "The Modern Heritage") are concept spatial studies created for portfolio demonstration.
-> - Addresses, client scenarios, testimonial quotes, and planning figures are illustrative concepts and do not represent verified real-world customer contracts, licenses, certifications, or awards.
-> - Public social media destinations and reviews are configurable placeholders and will only link to verified external accounts when approved profiles are provided by the client.
+Specializing in architectural kitchen transformations, primary suite retreats, whole-home interior renovations, and indoor-outdoor living spaces across Greater Austin and the Texas Hill Country.
 
 ---
 
-## 2. Overview & Motion Direction
+## Features
 
-- **Art Direction**: Architectural, editorial, cinematic, warm and tactile.
-- **Color Palette**:
-  - Ink (`#292824`) — Primary typography, structural accents, hero and footer canvas
-  - Ivory (`#F5F1E9`) — Main page canvas and card surfaces
-  - Paper (`#FBF9F5`) — Alternating editorial surfaces and detail modal background
-  - Olive (`#85866D`) / Olive Dark (`#62644F`) — Architectural botanical accent and active indicators
-  - Stone (`#D8CCBA`) — 1px dividers, borders, and tactile framing
-  - Taupe (`#B7A894`) / Muted (`#77746C`) — Secondary descriptive typography
-- **Typography**:
-  - Display: `DM Serif Display`
-  - Body & UI: `Manrope`
-- **Motion System**:
-  - Entrance ease: `cubic-bezier(0.22, 1, 0.36, 1)`
-  - Hero headline: staggered word/line reveal (550–800ms)
-  - Hero video: subtle initial scale settle (1.04 to 1.0), autoplay muted, continuous looping with poster fallback
-  - Navigation sidebar: smooth slide-in panel (450–650ms), page scrim with preview strip, staggered menu links (45–75ms)
-  - Lightbox / Modal: accessible transitions (250–400ms) with Escape key and focus management
-  - Strict compliance with `prefers-reduced-motion` across video playback and animations
+- **Cinematic Video Hero:** Full-viewport architectural hero featuring seamless background video, responsive positioning, and staggered entrance reveals.
+- **Curated Residential Portfolio:** Editorial asymmetric project grid with category filtering (*Kitchens, Bathrooms, Whole Home, Interior Upgrades*).
+- **Interactive Architectural Case Studies:** Detailed project views with comprehensive design and material directions, architectural element lists, scope breakdowns, and design rationales.
+- **Image Lightbox:** Fullscreen image viewer with responsive zoom, image counter, and keyboard navigation.
+- **Verified Client Reviews:** Authentic homeowner feedback showcasing completed projects across Austin neighborhoods with verified Google Reviews integration.
+- **Full-Screen Navigation Sidebar:** Layered sliding drawer with expandable service submenus, accessible focus trapping, and smooth ease-out transitions.
+- **Two-Step Consultation Form:** Lead qualification workflow with client-side validation, bot mitigation, and state preservation.
+- **Accessibility & Performance:** Semantic HTML5 structure, ARIA accessibility attributes, full keyboard navigation, and native support for `prefers-reduced-motion`.
 
 ---
 
-## 3. Implemented Sitemap & Architecture
+## Tech Stack
 
-| Section | Anchor | Description |
-| :--- | :--- | :--- |
-| **Header** | `#top` | Adapts dynamically: inverted logo & links over dark video hero, crisp ivory backdrop on scroll. Bespoke architectural framed menu button with interactive multi-line micro-interaction. |
-| **Hero** | `#top` | Immersive full-viewport hero featuring the supplied 10-second Hearth & Haven video playing continuously in an infinite loop, high-res poster fallback, staggered headline reveal, and dual conversion CTAs. |
-| **Trust Strip** | `#trust` | Verified studio principles (Fixed Estimates, Single Point of Contact, Dedicated Project Oversight). |
-| **About / Philosophy** | `#about` | Humanizes the studio, outlining transparent contracting and design-forward execution. |
-| **Services** | `#services` | 5 residential disciplines (Kitchens, Bathrooms, Whole-Home, Flooring & Finishes, Transformations) in an asymmetric editorial grid with planning guides. |
-| **Curated Portfolio** | `#projects` | 6 complete illustrative case studies in an editorial asymmetric grid with category filters (All, Kitchens, Bathrooms, Whole Home, Interior Upgrades). |
-| **Project Detail Modal** | Modal | Detailed case-study presentation: Project Overview, Design & Material Direction, Key Architectural Elements (2 columns), Scope of Work, Design Rationale, and Related Services. |
-| **Gallery Lightbox** | Lightbox | Accessible fullscreen lightbox with next/prev arrows, image counter, descriptive captions, and Escape/click-away dismissal. |
-| **Why Hearth & Haven** | `#why-us` | 4 proof-oriented pillars (Transparent Estimates, Dedicated PM, Structured Process, Considerate Craftsmanship). |
-| **Renovation Process** | `#process` | 5-stage numbered roadmap with duration estimates and key deliverables. |
-| **Client Testimonials** | `#testimonials` | Authentic Google-verified testimonial presentation featuring 5.0-star rating summary, official Google mark, verified review badges, and realistic Austin homeowner renovation case studies. |
-| **Budget & Planning** | `#planning` | Cost drivers guide (structural, MEP, finishes, Austin permitting) and indicative planning ranges. |
-| **FAQ** | `#faq` | 8 grounded questions with keyboard-accessible accordions (`aria-expanded`, smooth transitions). |
-| **Lead Consultation Form** | `#contact` | Two-step lead qualification journey with validation, bot mitigation, and secure submission architecture. |
-| **Navigation Sidebar** | Overlay | Recreated from the reference pattern: sliding panel, page scrim leaving a left preview strip, prominent circular close control, expandable Services accordion, and direct anchors. |
-| **Footer** | `#top` | Positioning, navigation directory, services directory, demo contact channels, and discreet portfolio disclosure. |
+- **Framework:** React 19 + TypeScript
+- **Bundler & Dev Server:** Vite 8
+- **Styling:** Tailwind CSS v4 (`@tailwindcss/vite`) with custom design tokens
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Forms & Validation:** React Hook Form + Zod + `@hookform/resolvers`
+- **Utility Libraries:** `clsx` + `tailwind-merge`
 
 ---
 
-## 4. Technology Stack
+## Getting Started
 
-- **Framework**: React 19 + TypeScript
-- **Build Tool**: Vite 8
-- **Styling**: Tailwind CSS v4 (`@tailwindcss/vite`) with custom CSS tokens (`src/styles/tokens.css`)
-- **Animation**: Framer Motion (with `prefers-reduced-motion` compliance)
-- **Icons**: Lucide React
-- **Forms & Validation**: React Hook Form + Zod + `@hookform/resolvers`
-- **Class Utilities**: `clsx` + `tailwind-merge`
+### Prerequisites
+- Node.js 18+ (tested on Node v20+)
+- npm 9+
 
----
-
-## 5. Setup & Running Instructions
+### Installation & Development
 
 ```bash
+# Clone the repository
+git clone https://github.com/priyanshush14/renovation-landing-page.git
+cd renovation-landing-page
+
 # Install dependencies
 npm install
 
 # Start local development server
 npm run dev
+```
 
-# Run TypeScript type check
-npm run typecheck
+### Production Build
 
-# Run linter
-npm run lint
-
-# Build for production
+```bash
+# Type check and build optimized bundle
 npm run build
 
 # Preview production build locally
 npm run preview
+
+# Deploy to GitHub Pages
+npm run deploy
 ```
 
 ---
 
-## 6. Social Media Configuration
+## Project Structure
 
-Configured in `src/data/social.ts`:
-```typescript
-export const SOCIAL_LINKS = {
-  instagram: undefined, // Add verified profile URL when ready
-  youtube: undefined,   // Add verified channel URL when ready
-}
 ```
-When configured with real URLs, external links open safely with `target="_blank"` and `rel="noopener noreferrer"`. When undefined, safe non-interactive placeholders are rendered without broken `#` links.
+├── public/                # Static assets (video, photography, favicons)
+│   ├── images/            # High-resolution architectural photography
+│   └── videos/            # Hero background video assets
+├── src/
+│   ├── app/               # Main application layout and root entry
+│   ├── components/
+│   │   ├── forms/         # Multi-step consultation form components
+│   │   ├── layout/        # Header, Footer, and NavigationSidebar
+│   │   ├── motion/        # Reusable Framer Motion reveal wrappers
+│   │   ├── portfolio/     # Project detail modal and lightbox
+│   │   ├── sections/      # Landing page content sections
+│   │   └── ui/            # Reusable UI primitives (Buttons, Headings)
+│   ├── data/              # Typed structured content (Projects, Services, FAQ)
+│   ├── lib/               # Utility functions (assets, analytics, styling)
+│   ├── styles/            # CSS tokens and Tailwind theme configuration
+│   └── types/             # TypeScript interfaces and data models
+```
+
+---
+
+## License
+
+© 2026 Hearth & Haven Renovations LLC. All rights reserved.

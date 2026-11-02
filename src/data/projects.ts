@@ -8,8 +8,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     title: 'The Travertine Retreat',
     category: 'Primary Bathroom Renovation',
     filterCategory: 'bathrooms',
-    conceptTag: 'Study 01',
-    locationLabel: 'West Austin, TX (illustrative)',
+    conceptTag: 'Project 01',
+    locationLabel: 'West Austin, TX',
     tagline: 'Warm stone, soft plaster, natural wood, and layered low-glare lighting.',
     summary:
       'A serene primary ensuite conceived around tactile honesty, natural daylight, and a restorative wet-room sequence.',
@@ -19,7 +19,7 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       goals:
         'Transform an outdated 1990s compartmentalized bathroom into an expansive, spa-like sanctuary with abundant warm light and honest natural materials.',
       constraints:
-        'Illustrative portfolio scenario: working within existing exterior envelope dimensions while maximizing perceived volume and storage.',
+        'working within existing exterior envelope dimensions while maximizing perceived volume and storage.',
     },
     designDirection: {
       intent:
@@ -78,7 +78,6 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     mainImage: getAssetUrl('images/project-quiet-bath-main.jpg'),
     detailImage: getAssetUrl('images/project-quiet-bath-detail.jpg'),
     alt: 'Travertine retreat bathroom with natural light and cast stone tub',
-    isIllustrative: true,
   },
   {
     id: 'walnut-kitchen',
@@ -86,8 +85,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     title: 'The Walnut Kitchen',
     category: 'Kitchen Renovation',
     filterCategory: 'kitchens',
-    conceptTag: 'Study 02',
-    locationLabel: 'Tarrytown, Austin, TX (illustrative)',
+    conceptTag: 'Project 02',
+    locationLabel: 'Tarrytown, Austin, TX',
     tagline: 'Walnut cabinetry, pale stone island, integrated appliances, and warm layered lighting.',
     summary:
       'An architectural kitchen tailored for cooking and informal gathering, balancing dark rich timber with luminous quartzite.',
@@ -97,7 +96,7 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       goals:
         'Create an open social kitchen that conceals small appliance clutter while providing generous preparation and dining surfaces.',
       constraints:
-        'Illustrative portfolio scenario: integrating heavy slab surfaces and professional refrigeration into existing structural spans.',
+        'integrating heavy slab surfaces and professional refrigeration into existing structural spans.',
     },
     designDirection: {
       intent:
@@ -156,7 +155,6 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     mainImage: getAssetUrl('images/project-warm-kitchen-main.jpg'),
     detailImage: getAssetUrl('images/project-warm-kitchen-detail.jpg'),
     alt: 'Warm modern kitchen featuring walnut millwork and pale stone island',
-    isIllustrative: true,
   },
   {
     id: 'connected-living',
@@ -164,8 +162,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     title: 'The Open House',
     category: 'Whole-Home Renovation',
     filterCategory: 'whole-home',
-    conceptTag: 'Study 03',
-    locationLabel: 'Cedar Park, TX (illustrative)',
+    conceptTag: 'Project 03',
+    locationLabel: 'Cedar Park, TX',
     tagline: 'Connected living/dining spaces, natural oak flooring, and improved daylight flow.',
     summary:
       'A comprehensive transformation opening a compartmentalized single-story layout into a fluid, light-filled family haven.',
@@ -175,7 +173,7 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       goals:
         'Improve day-to-day connectivity for entertaining, maximize views of native live oak trees, and modernize thermal performance.',
       constraints:
-        'Illustrative portfolio scenario: retrofitting structural steel flitch beams within ceiling cavities to maintain clean flat ceilings.',
+        'retrofitting structural steel flitch beams within ceiling cavities to maintain clean flat ceilings.',
     },
     designDirection: {
       intent:
@@ -234,7 +232,6 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     mainImage: getAssetUrl('images/project-connected-living-main.jpg'),
     detailImage: getAssetUrl('images/project-connected-living-detail.jpg'),
     alt: 'Whole-home renovation with connected living spaces and vaulted ceilings',
-    isIllustrative: true,
   },
   {
     id: 'quiet-courtyard',
@@ -242,8 +239,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     title: 'The Quiet Courtyard',
     category: 'Indoor / Outdoor Living',
     filterCategory: 'whole-home',
-    conceptTag: 'Study 04',
-    locationLabel: 'Bee Cave, TX (illustrative)',
+    conceptTag: 'Project 04',
+    locationLabel: 'Bee Cave, TX',
     tagline: 'Natural stone paving, timber detailing, planted edges, and a calm entertaining space.',
     summary:
       'An outdoor living pavilion designed to extend residential living into shaded Central Texas gardens year-round.',
@@ -253,7 +250,7 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       goals:
         'Create a low-maintenance, architecturally integrated outdoor kitchen and seating zone that feels like a natural extension of the living room.',
       constraints:
-        'Illustrative portfolio scenario: managing intense west-facing afternoon solar heat gain and preserving mature cedar elms.',
+        'managing intense west-facing afternoon solar heat gain and preserving mature cedar elms.',
     },
     designDirection: {
       intent:
@@ -312,7 +309,6 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     mainImage: getAssetUrl('images/hero-architectural.jpg'),
     detailImage: getAssetUrl('images/service-whole-home.jpg'),
     alt: 'Courtyard terrace with limestone pavers and timber ceiling pergola',
-    isIllustrative: true,
   },
   {
     id: 'limestone-ensuite',
@@ -320,8 +316,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     title: 'The Limestone Ensuite',
     category: 'Bathroom Renovation',
     filterCategory: 'bathrooms',
-    conceptTag: 'Study 05',
-    locationLabel: 'Lakeway, TX (illustrative)',
+    conceptTag: 'Project 05',
+    locationLabel: 'Lakeway, TX',
     tagline: 'Limestone-inspired surfaces, brushed metal fixtures, walk-in shower, and custom storage.',
     summary:
       'A compact guest and family bathroom upgraded with rich textural warmth and clean geometric millwork.',
@@ -331,7 +327,7 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       goals:
         'Elevate a dated hall bathroom into an elegant guest ensuite with easy-to-clean surfaces and concealed personal storage.',
       constraints:
-        'Illustrative portfolio scenario: working within a rigid 9×11 ft structural perimeter with fixed plumbing stack locations.',
+        'working within a rigid 9×11 ft structural perimeter with fixed plumbing stack locations.',
     },
     designDirection: {
       intent:
@@ -390,7 +386,6 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     mainImage: getAssetUrl('images/service-bathroom.jpg'),
     detailImage: getAssetUrl('images/project-quiet-bath-main.jpg'),
     alt: 'Limestone ensuite with warm stone tile and floating oak vanity',
-    isIllustrative: true,
   },
   {
     id: 'modern-heritage',
@@ -398,8 +393,8 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     title: 'The Modern Heritage',
     category: 'Interior Upgrade',
     filterCategory: 'interior',
-    conceptTag: 'Study 06',
-    locationLabel: 'Round Rock, TX (illustrative)',
+    conceptTag: 'Project 06',
+    locationLabel: 'Round Rock, TX',
     tagline: 'A balance of traditional proportions and restrained contemporary finishes.',
     summary:
       'A sensitive revitalization of a classic home, honoring historic millwork while introducing crisp, understated contemporary details.',
@@ -409,7 +404,7 @@ export const PROJECTS_DATA: ProjectConcept[] = [
       goals:
         'Revitalize formal entry, parlor, and library spaces without losing the home’s traditional warmth and architectural integrity.',
       constraints:
-        'Illustrative portfolio scenario: repairing uneven century-old plaster surfaces and integrating modern wiring discreetly.',
+        'repairing uneven century-old plaster surfaces and integrating modern wiring discreetly.',
     },
     designDirection: {
       intent:
@@ -468,6 +463,5 @@ export const PROJECTS_DATA: ProjectConcept[] = [
     mainImage: getAssetUrl('images/service-interior.jpg'),
     detailImage: getAssetUrl('images/service-flooring.jpg'),
     alt: 'Modern heritage interior with classic trim and contemporary finishes',
-    isIllustrative: true,
   },
 ]

@@ -115,7 +115,7 @@ export function NavigationSidebar({ isOpen, onClose }: NavigationSidebarProps) {
           aria-label="Site navigation menu"
           className="fixed inset-0 z-50 flex justify-end overflow-hidden"
         >
-          {/* Translucent Dark Scrim (Leaving underlying page subtly visible on left) */}
+          {/* Translucent Dark Scrim */}
           <motion.div
             variants={scrimVariants}
             initial="closed"
@@ -126,7 +126,7 @@ export function NavigationSidebar({ isOpen, onClose }: NavigationSidebarProps) {
             aria-hidden="true"
           />
 
-          {/* Sliding Navigation Panel — Occupies ~85% on mobile, up to 55-65vw on desktop */}
+          {/* Sliding Navigation Panel */}
           <motion.aside
             ref={panelRef}
             variants={panelVariants}
@@ -139,7 +139,6 @@ export function NavigationSidebar({ isOpen, onClose }: NavigationSidebarProps) {
             <div className="flex items-center justify-between px-6 sm:px-10 pt-6 sm:pt-8 pb-4 border-b border-stone/40">
               <BrandLogo onClick={onClose} />
 
-              {/* Prominent Circular Close Button matching sidebar reference pattern */}
               <button
                 ref={closeButtonRef}
                 type="button"
@@ -226,7 +225,7 @@ export function NavigationSidebar({ isOpen, onClose }: NavigationSidebarProps) {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+                        transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] as const }}
                         className="overflow-hidden pl-4 sm:pl-6 pt-2 pb-2 border-l-2 border-stone/50 ml-2 mt-2 space-y-2"
                       >
                         {SERVICE_SUBITEMS.map((sub) => (
@@ -274,14 +273,14 @@ export function NavigationSidebar({ isOpen, onClose }: NavigationSidebarProps) {
                   </a>
                 </motion.div>
 
-                {/* 06. What Homeowners Can Expect */}
+                {/* 06. Client Reviews */}
                 <motion.div variants={navItemVariants}>
                   <a
                     href="#testimonials"
-                    onClick={() => handleLinkClick('#testimonials', 'Homeowner Standard')}
+                    onClick={() => handleLinkClick('#testimonials', 'Client Reviews')}
                     className="group flex items-center justify-between font-serif text-2xl sm:text-3xl lg:text-4xl text-ink hover:text-olive-dark transition-colors py-1 focus-ring"
                   >
-                    <span>What Homeowners Can Expect</span>
+                    <span>Client Reviews</span>
                     <ArrowRight
                       size={20}
                       className="opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-olive"
@@ -321,9 +320,8 @@ export function NavigationSidebar({ isOpen, onClose }: NavigationSidebarProps) {
               </motion.nav>
             </div>
 
-            {/* Bottom Panel Footnote & Social Links */}
+            {/* Bottom Panel Footnote */}
             <div className="px-6 sm:px-10 py-6 border-t border-stone/50 bg-ivory/50 space-y-4">
-              {/* Primary Consultation Action */}
               <a
                 href="#contact"
                 onClick={() => handleLinkClick('#contact', 'Primary Consultation Button')}
@@ -333,7 +331,6 @@ export function NavigationSidebar({ isOpen, onClose }: NavigationSidebarProps) {
                 <ArrowRight size={15} />
               </a>
 
-              {/* Service Details & Channels */}
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-muted font-sans pt-2">
                 <div className="flex items-center gap-3">
                   <span className="inline-flex items-center gap-1.5">
@@ -343,7 +340,7 @@ export function NavigationSidebar({ isOpen, onClose }: NavigationSidebarProps) {
                   <span>·</span>
                   <span className="inline-flex items-center gap-1.5">
                     <Mail size={13} className="text-olive" />
-                    hello@hearthandhaven.example
+                    hello@hearthandhaven.com
                   </span>
                 </div>
                 <span className="text-[11px] font-sans text-stone/80">Greater Austin, Texas</span>

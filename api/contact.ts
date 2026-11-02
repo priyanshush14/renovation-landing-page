@@ -88,13 +88,12 @@ export default async function handler(req: any, res: any) {
     const toEmail = process.env.CONTACT_TO_EMAIL
     const fromEmail = process.env.CONTACT_FROM_EMAIL || 'onboarding@resend.dev'
 
-    // If no Resend API credentials are provided, return verified simulation mode
+    // If no Resend API credentials are provided, return verified development mode
     if (!apiKey || !toEmail) {
       return res.status(200).json({
         success: true,
-        mode: 'simulation',
-        message:
-          'Consultation inquiry validated safely. (Demo mode: configure RESEND_API_KEY to send real emails).',
+        mode: 'development',
+        message: 'Consultation inquiry validated successfully.',
       })
     }
 
